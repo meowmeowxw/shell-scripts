@@ -1,4 +1,5 @@
 #!/bin/bash
+#it is a virtual-host bruteforcer/fuzzer (i don't know exactly what it is)
 #it must be run as root/sudo
 #give to the script as the 1st argument the file which contains
 #the list of dns, and as the 2nd argument the ip to try
