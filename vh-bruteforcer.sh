@@ -3,15 +3,18 @@
 #it must be run as root/sudo
 #give to the script as the 1st argument the file which contains
 #the list of dns, and as the 2nd argument the ip to try
+
 help ()
 {
 	echo "use : ./dns-bruteforce.sh wordlist_file ip_address"
 }
-if [ $# -lt 2 ]
+
+if [ $# -ne 2 ]
 then
 	help 
 	exit 1
 fi
+
 WORDLIST=$1
 IP=$2
 for DNS in $( cat $WORDLIST );
@@ -28,3 +31,4 @@ do
 done
 rm /etc/hosts.origin 
 rm file.output
+

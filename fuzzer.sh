@@ -1,5 +1,17 @@
 #!/bin/bash
 
+help()
+{
+	echo "usage : ./fuzzer.sh wordlist"
+	exit 1
+}
+
+if [ $# -ne 1 ]
+then
+	help()
+	exit 1
+fi
+
 WORDLIST=$1
 for KEY in $( cat $WORDLIST );
 do
@@ -17,3 +29,4 @@ do
 	fi
 done
 rm file.output
+
